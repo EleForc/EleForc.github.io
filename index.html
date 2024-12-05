@@ -3,49 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welkom bij de Koekjeskluis - dé enige kluis ter wereld speciaal voor pepernoten, speculaas, en marsepein!">
+    <meta name="description" content="De Koekjeskluis - Verzameling van al je pepernoten, veilig bewaard!">
     <title>De Koekjeskluis</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="banner">
-            <h1>Welkom bij de Koekjeskluis!</h1>
-            <p>De enige kluis die pepernoten waard is!</p>
+            <h1>Welkom bij de Koekjeskluis! 🎅</h1>
+            <p>Vang de pepernoten en vul de kluis!</p>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#kluis">Over de Koekjeskluis</a></li>
+                <li><a href="#about">Over</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="home">
-            <h2>Wat is de Koekjeskluis?</h2>
-            <p>De Koekjeskluis is ontworpen om je meest waardevolle snacks, zoals pepernoten, speculaas en chocoladeletters, veilig te houden. Voor slechts €1.000.000.000.000.000 kun jij de trotse eigenaar worden van deze kluis.</p>
-            <img src="koekjeskluis.jpg" alt="Afbeelding van de Koekjeskluis" class="center-image">
-        </section>
-        <section id="kluis">
-            <h2>Waarom kiezen voor de Koekjeskluis?</h2>
-            <ul>
-                <li>**Onbreekbaar**: Gemaakt van pepernoot-versterkt titanium.</li>
-                <li>**Slim beveiligd**: Ontgrendel met Sinterklaas-Code.</li>
-                <li>**Uniek**: De enige kluis met een ingebouwde geurverspreider van warme speculaaskruiden.</li>
-            </ul>
-        </section>
-        <section id="shop">
-            <h2>Koop de Koekjeskluis</h2>
-            <p>Wil je een bestelling plaatsen? Stuur een brief naar Sinterklaas met je verlanglijstje. Vergeet niet: de Koekjeskluis kost slechts **€1.000.000.000.000.000**!</p>
-            <button onclick="alert('Gefeliciteerd! Je kunt sparen voor de Koekjeskluis.')">Bestel Nu</button>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Heb je vragen over de Koekjeskluis? Neem contact met ons op via <a href="mailto:618913@olz.nl">info@koekjeskluis.nl</a>.</p>
-        </section>
-    </main>
+
+    <!-- Kluis in de linkerbovenhoek -->
+    <div id="kluis" class="vault">
+        <p>🗄️ Kluis: <span id="pepernoten-teller">0</span> pepernoten, <span id="snoepjes-teller">0</span> snoepjes, <span id="chocolade-teller">0</span> chocoladeletters</p>
+    </div>
+
+    <!-- Verborgen afbeelding in de rechterbovenhoek -->
+    <img id="hidden-image" src="verborgen-afbeelding.png" alt="Verborgen afbeelding" class="hidden">
+
+    <!-- Instellingen menu (standaard verborgen) -->
+    <div id="settings-menu" class="settings-menu hidden">
+        <h3>Kluis Inhoud Beheren</h3>
+        <button onclick="adjustKluis('pepernoten', 100)">Voeg 100 Pepernoten toe</button>
+        <button onclick="adjustKluis('pepernoten', -100)">Verwijder 100 Pepernoten</button>
+        <button onclick="adjustKluis('snoepjes', 50)">Voeg 50 Snoepjes toe</button>
+        <button onclick="adjustKluis('snoepjes', -50)">Verwijder 50 Snoepjes</button>
+        <button onclick="adjustKluis('chocolade', 10)">Voeg 10 Chocoladeletters toe</button>
+        <button onclick="adjustKluis('chocolade', -10)">Verwijder 10 Chocoladeletters</button>
+        <button onclick="resetKluis()">Reset Kluis</button>
+    </div>
+
+    <!-- Tandwiel-icoon om instellingenmenu te openen -->
+    <div id="settings-icon" class="settings-icon">
+        ⚙️
+    </div>
+
+    <!-- Secties van de website -->
+    <section id="home">
+        <h2>Welkom bij de Koekjeskluis</h2>
+        <p>Verzamel en bewaar je pepernoten veilig in je eigen kluis!</p>
+    </section>
+
+    <section id="about">
+        <h2>Over de Koekjeskluis</h2>
+        <p>De Koekjeskluis is de veiligste manier om je pepernoten en snoepjes op te slaan. Gebruik de kluis om je voorraad in te vullen.</p>
+    </section>
+
+    <section id="shop">
+        <h2>Shop</h2>
+        <p>Koop meer pepernoten, snoepjes en chocoladeletters om je kluis te vullen.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Heb je vragen? Neem contact met ons op via het onderstaande formulier.</p>
+    </section>
+
     <footer>
         <p>&copy; 2024 De Koekjeskluis. Alle rechten voorbehouden.</p>
     </footer>
