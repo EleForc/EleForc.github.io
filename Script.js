@@ -1,30 +1,35 @@
-// Teller voor de kluisinhoud
-let kluisInhoud = {
-    pepernoten: 0
-};
+document.addEventListener("DOMContentLoaded", () => {
+    // Kluis functionaliteit
+    const kluis = document.getElementById("kluis");
+    const hiddenImage = document.getElementById("hidden-image");
 
-// Kluis aanpassen
+    kluis.addEventListener("click", () => {
+        hiddenImage.classList.toggle("hidden");
+    });
+
+    // "KOOP NU!" knop
+    const koopNuButton = document.getElementById("koop-nu-button");
+    koopNuButton.addEventListener("click", () => {
+        alert("Dit artikel kost slechts €1.000.000.000.000.000.000.000.000.000");
+    });
+
+    // Instellingen menu toggle
+    const settingsIcon = document.getElementById("settings-icon");
+    const settingsMenu = document.getElementById("settings-menu");
+
+    settingsIcon.addEventListener("click", () => {
+        settingsMenu.classList.toggle("hidden");
+    });
+});
+
 function adjustKluis(type, amount) {
-    if (kluisInhoud[type] !== undefined) {
-        kluisInhoud[type] += amount;
-        document.getElementById(`${type}-teller`).innerText = kluisInhoud[type];
-    }
+    const teller = document.getElementById("pepernoten-teller");
+    let current = parseInt(teller.textContent) || 0;
+
+    current = Math.max(0, current + amount);
+    teller.textContent = current;
 }
 
-// Reset de kluis
 function resetKluis() {
-    kluisInhoud = { pepernoten: 0 };
-    document.getElementById('pepernoten-teller').innerText = 0;
+    document.getElementById("pepernoten-teller").textContent = "0";
 }
-
-// Klik op kluis om afbeelding te tonen
-document.getElementById('kluis').addEventListener('click', () => {
-    const hiddenImage = document.getElementById('hidden-image');
-    hiddenImage.style.display = 'block';
-});
-
-// Open en sluit het instellingenmenu
-document.getElementById('settings-icon').addEventListener('click', () => {
-    const menu = document.getElementById('settings-menu');
-    menu.classList.toggle('show');
-});

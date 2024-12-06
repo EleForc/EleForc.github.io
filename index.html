@@ -24,52 +24,68 @@
         </nav>
     </header>
 
-    <!-- Kluis in de linkerbovenhoek -->
-    <div id="kluis" class="vault">
-        <p>🗄️ Kluis: <span id="pepernoten-teller">0</span> pepernoten</p>
-    </div>
-
-    <!-- Verborgen afbeelding in de rechterbovenhoek -->
-    <img id="hidden-image" src="verborgen-afbeelding.png" alt="Verborgen afbeelding" class="hidden">
-
-    <!-- Instellingen menu -->
-    <div id="settings-menu" class="settings-menu hidden">
-        <h3>Kluis Inhoud Beheren</h3>
-        <button onclick="adjustKluis('pepernoten', 100)">Voeg 100 Pepernoten toe</button>
-        <button onclick="adjustKluis('pepernoten', -100)">Verwijder 100 Pepernoten</button>
-        <button onclick="resetKluis()">Reset Kluis</button>
-    </div>
-
-    <!-- Tandwiel-icoon -->
-    <div id="settings-icon" class="settings-icon">
-        ⚙️
-    </div>
-
-    <!-- Secties -->
-    <section id="home">
-        <h2>Welkom bij de Koekjeskluis</h2>
-        <p>Verzamel en bewaar je pepernoten veilig in je eigen kluis!</p>
-        <div class="kluizen-gallery">
-            <img src="kluis1.jpg" alt="Kluis type 1">
-            <img src="kluis2.jpg" alt="Kluis type 2">
-            <img src="kluis3.jpg" alt="Kluis type 3">
+    <main>
+        <!-- Kluis -->
+        <div id="kluis" class="vault">
+            <p>🗄️ Kluis: <span id="pepernoten-teller">0</span> pepernoten</p>
         </div>
-    </section>
 
-    <section id="about">
-        <h2>Over de Koekjeskluis</h2>
-        <p>De Koekjeskluis is de veiligste manier om je pepernoten en snoepjes op te slaan. Gebruik de kluis om je voorraad in te vullen.</p>
-    </section>
+        <!-- Verborgen afbeelding -->
+        <img id="hidden-image" src="verborgen-afbeelding.png" alt="Verborgen afbeelding" class="hidden">
 
-    <section id="shop">
-        <h2>Shop</h2>
-        <p>Koop meer pepernoten om je kluis te vullen.</p>
-    </section>
+        <!-- Instellingen -->
+        <div id="settings-menu" class="settings-menu hidden">
+            <h3>Kluis Inhoud Beheren</h3>
+            <button onclick="adjustKluis('pepernoten', 100)">Voeg 100 Pepernoten toe</button>
+            <button onclick="adjustKluis('pepernoten', -100)">Verwijder 100 Pepernoten</button>
+            <button onclick="resetKluis()">Reset Kluis</button>
+        </div>
+        <div id="settings-icon" class="settings-icon">⚙️</div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Heb je vragen? Neem contact met ons op via het onderstaande formulier.</p>
-    </section>
+        <!-- Secties -->
+        <section id="home" class="beige-box">
+            <h2>Welkom bij de Koekjeskluis</h2>
+            <p>Verzamel en bewaar je pepernoten veilig in je eigen kluis!</p>
+            <div class="kluizen-gallery">
+                <div class="kluis-item">
+                    <img src="kluis1.jpg" alt="Kluis type 1">
+                    <p>Model 1</p>
+                </div>
+                <div class="kluis-item">
+                    <img src="kluis2.jpg" alt="Kluis type 2">
+                    <p>Model 2</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="beige-box">
+            <h2>Over de Koekjeskluis</h2>
+            <p>De Koekjeskluis is de veiligste manier om je pepernoten en snoepjes op te slaan. Gebruik de kluis om je voorraad in te vullen.</p>
+        </section>
+
+        <section id="shop" class="beige-box">
+            <h2>Shop</h2>
+            <p>Koop de kluis nu, en stel al je lekkers veilig voor jaloerse famillieleden!</p>
+            <button id="koop-nu-button">KOOP NU!</button>
+        </section>
+
+        <section id="contact" class="beige-box">
+            <h2>Contact</h2>
+            <p>Heb je vragen? Neem contact met ons op via het onderstaande formulier.</p>
+            <form action="/verzend_formulier" method="post">
+                <label for="naam">Naam:</label><br>
+                <input type="text" id="naam" name="naam" required><br><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="bericht">Bericht:</label><br>
+                <textarea id="bericht" name="bericht" rows="4" required></textarea><br><br>
+
+                <input type="submit" value="Verzenden">
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 De Koekjeskluis. Alle rechten voorbehouden.</p>

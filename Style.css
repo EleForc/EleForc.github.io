@@ -1,132 +1,176 @@
-/* Algemene stijlen */
+/* Algemene stijl */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('sinterklaas-achtergrond.jpg'); /* Gebruik de Sinterklaas-achtergrond */
+    background-image: url('sinterklaas-achtergrond.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #3a3a3a;
-    padding-top: 50px;
+    color: #333;
 }
 
-/* Banner en navigatie */
-header .banner {
+/* Header en Banner */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-bottom: 2px solid #d62828;
 }
 
-header nav {
-    background-color: #d62828;
-    text-align: center;
+.banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #b22222; /* Sinterklaas-rood */
+}
+
+/* Navigatiebalk */
+nav {
+    background-color: #b22222; /* Dieprood, past bij Sinterklaas */
     padding: 10px 0;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-header nav a {
-    color: white;
+nav a {
     text-decoration: none;
+    color: #ffd700; /* Goudkleur */
     font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Kluis in de linkerbovenhoek */
-.vault {
-    font-size: 1em;
-    background-color: #ffd700;
-    padding: 5px 10px;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
-    position: fixed;
+}
+
+nav a:hover {
+    background-color: #ffd700; /* Goudkleur achtergrond */
+    color: #b22222; /* Rood als tekstkleur */
+}
+
+/* Beige blokken */
+.beige-box {
+    background-color: #f5f5dc;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Kluis */
+.vault {
+    position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 100;
+    background: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Verborgen afbeelding */
-#hidden-image {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 150px;
-    height: auto;
-    display: none; /* Standaard verborgen */
-    z-index: 200;
-    border: 3px dashed red;
-    animation: blink-border 1s infinite; /* Knipperende omlijning */
+.hidden {
+    display: none;
 }
 
-/* Knipperende omlijning */
-@keyframes blink-border {
-    0% { border-color: red; }
-    50% { border-color: yellow; }
-    100% { border-color: red; }
+#hidden-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    border: 2px dashed red;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: red;
+    }
+}
+
+/* "KOOP NU!" knop */
+#koop-nu-button {
+    background-color: #ff4500;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#koop-nu-button:hover {
+    background-color: #ff6347;
 }
 
 /* Instellingen menu */
-.settings-menu {
-    position: fixed;
-    top: 50px;
-    right: 20px;
-    background-color: #f7f7f7;
-    border: 2px solid #ccc;
-    padding: 10px;
-    display: none;
-    z-index: 200;
-}
-
-.settings-menu.show {
-    display: block;
-}
-
 .settings-icon {
-    font-size: 2em;
-    position: fixed;
+    position: absolute;
     top: 10px;
-    right: 50px;
+    right: 10px;
+    font-size: 1.5rem;
     cursor: pointer;
-    z-index: 102;
 }
 
-/* Kluis galerie */
-.kluizen-gallery img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.settings-menu {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.kluizen-gallery {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Secties */
-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+.settings-menu.hidden {
+    display: none;
 }
 
 /* Footer */
 footer {
+    background: rgba(255, 255, 255, 0.9);
     text-align: center;
-    background-color: #3a3a3a;
-    color: white;
-    padding: 10px 0;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Kluis gallery */
+.kluizen-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.kluis-item {
+    text-align: center;
+}
+
+.kluis-item p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Galerij van kluizen */
+.kluizen-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.kluizen-gallery img:hover {
+    transform: scale(1.1);
 }
