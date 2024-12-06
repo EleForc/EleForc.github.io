@@ -26,33 +26,34 @@
 
     <!-- Kluis in de linkerbovenhoek -->
     <div id="kluis" class="vault">
-        <p>🗄️ Kluis: <span id="pepernoten-teller">0</span> pepernoten, <span id="snoepjes-teller">0</span> snoepjes, <span id="chocolade-teller">0</span> chocoladeletters</p>
+        <p>🗄️ Kluis: <span id="pepernoten-teller">0</span> pepernoten</p>
     </div>
 
     <!-- Verborgen afbeelding in de rechterbovenhoek -->
     <img id="hidden-image" src="verborgen-afbeelding.png" alt="Verborgen afbeelding" class="hidden">
 
-    <!-- Instellingen menu (standaard verborgen) -->
+    <!-- Instellingen menu -->
     <div id="settings-menu" class="settings-menu hidden">
         <h3>Kluis Inhoud Beheren</h3>
         <button onclick="adjustKluis('pepernoten', 100)">Voeg 100 Pepernoten toe</button>
         <button onclick="adjustKluis('pepernoten', -100)">Verwijder 100 Pepernoten</button>
-        <button onclick="adjustKluis('snoepjes', 50)">Voeg 50 Snoepjes toe</button>
-        <button onclick="adjustKluis('snoepjes', -50)">Verwijder 50 Snoepjes</button>
-        <button onclick="adjustKluis('chocolade', 10)">Voeg 10 Chocoladeletters toe</button>
-        <button onclick="adjustKluis('chocolade', -10)">Verwijder 10 Chocoladeletters</button>
         <button onclick="resetKluis()">Reset Kluis</button>
     </div>
 
-    <!-- Tandwiel-icoon om instellingenmenu te openen -->
+    <!-- Tandwiel-icoon -->
     <div id="settings-icon" class="settings-icon">
         ⚙️
     </div>
 
-    <!-- Secties van de website -->
+    <!-- Secties -->
     <section id="home">
         <h2>Welkom bij de Koekjeskluis</h2>
         <p>Verzamel en bewaar je pepernoten veilig in je eigen kluis!</p>
+        <div class="kluizen-gallery">
+            <img src="kluis1.jpg" alt="Kluis type 1">
+            <img src="kluis2.jpg" alt="Kluis type 2">
+            <img src="kluis3.jpg" alt="Kluis type 3">
+        </div>
     </section>
 
     <section id="about">
@@ -62,7 +63,7 @@
 
     <section id="shop">
         <h2>Shop</h2>
-        <p>Koop meer pepernoten, snoepjes en chocoladeletters om je kluis te vullen.</p>
+        <p>Koop meer pepernoten om je kluis te vullen.</p>
     </section>
 
     <section id="contact">

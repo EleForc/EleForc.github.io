@@ -3,12 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff9e6;
-    background-image: url('verborgen-afbeelding.png'); /* Achtergrond als afbeelding in de projectmap */
-    background-repeat: no-repeat;
+    background-image: url('sinterklaas-achtergrond.jpg'); /* Gebruik de Sinterklaas-achtergrond */
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #3a3a3a;
-    padding-top: 50px; /* Zorgt ervoor dat de inhoud niet onder de header verdwijnt */
+    padding-top: 50px;
 }
 
 /* Banner en navigatie */
@@ -46,26 +46,34 @@ header nav a:hover {
 
 /* Kluis in de linkerbovenhoek */
 .vault {
-    text-align: center;
     font-size: 1em;
     background-color: #ffd700;
     padding: 5px 10px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 10px;
     left: 10px;
     z-index: 100;
 }
 
-/* Verborgen afbeelding in de rechterbovenhoek */
+/* Verborgen afbeelding */
 #hidden-image {
     position: fixed;
     top: 10px;
     right: 10px;
-    width: 100px; /* Pas de grootte van de afbeelding aan zoals nodig */
+    width: 150px;
+    height: auto;
     display: none; /* Standaard verborgen */
     z-index: 200;
+    border: 3px dashed red;
+    animation: blink-border 1s infinite; /* Knipperende omlijning */
+}
+
+/* Knipperende omlijning */
+@keyframes blink-border {
+    0% { border-color: red; }
+    50% { border-color: yellow; }
+    100% { border-color: red; }
 }
 
 /* Instellingen menu */
@@ -93,6 +101,19 @@ header nav a:hover {
     z-index: 102;
 }
 
+/* Kluis galerie */
+.kluizen-gallery img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.kluizen-gallery {
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Secties */
 section {
     padding: 20px;
@@ -100,11 +121,6 @@ section {
     max-width: 800px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #d62828;
 }
 
 /* Footer */
@@ -113,5 +129,4 @@ footer {
     background-color: #3a3a3a;
     color: white;
     padding: 10px 0;
-    margin-top: 20px;
 }
